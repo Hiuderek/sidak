@@ -59,13 +59,30 @@ class M_gajiKaryawan extends CI_Model
   }
   function getNamaKaryawan()
   {
-    $this->db->select('id, nama_karyawan');
-    $this->db->from('karyawan');
+    $karyawan = $this->db->select('id, nama_karyawan');
+    $karyawan = $this->db->from('karyawan');
+    $karyawan = $this->db->get()->result_array();
+    $gajikaryawan = $this->db->select('gajikaryawan.*, karyawan.nama_karyawan');
+    $gajikaryawan = $this->db->from('gajikaryawan');
+    $gajikaryawan = $this->db->where('YEAR(tanggal)', date('Y'));
+    $gajikaryawan = $this->db->where('MONTH(tanggal)', date('m'));
+    $gajikaryawan = $this->db->join('karyawan', 'karyawan.id = gajikaryawan.id_karyawan');
+    $gajikaryawan = $this->db->get()->result_array();
 
-    // echo '<pre>';
-    // print_r($this->db->get()->result_array());
-    // die;
-    return $this->db->get()->result_array();
+    for($i=0; $i < count($karyawan); $i++) {
+      $karyawan[$i]['tanggal'] = FALSE;
+    }
+
+    for($i=0; $i < count($gajikaryawan); $i++) {
+      for($j=0; $j < count($karyawan); $j++) {
+        if($karyawan[$j]['nama_karyawan'] == $gajikaryawan[$i]['nama_karyawan']) {
+          $karyawan[$j]['tanggal'] = $gajikaryawan[$i]['tanggal'];
+          break;
+        }
+      };
+    };
+
+    return $karyawan;
   }
   private function _upload()
   {

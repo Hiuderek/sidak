@@ -31,12 +31,6 @@
               </span>
               <span class="text">Tambah Data</span>
             </a>
-            <!-- <a href="<?= site_url('C_DosenTetap/unduhDT'); ?>" target="_blank" class="btn btn-info btn-icon-split" style="margin-bottom: 10px; margin-left: 10px">
-              <span class="icon text-white-50">
-                <i class="fas fa-download"></i>
-              </span>
-              <span class="text">Unduh Data</span>
-            </a> -->
             <thead>
               <tr>
                 <th style="text-align: center">No.</th>
@@ -46,29 +40,6 @@
                 <th style="text-align: center">Status Pajak</th>
                 <th style="text-align: center">NPWP</th>
                 <th style="text-align: center">Aksi</th>
-                <!-- <th colspan="2" style="text-align: center">Gelar
-                  <table>
-                    <th style="width: 140px; border: none">Depan</th>
-                    <th style="width: 140px; border: none">Belakang</th>
-                  </table>
-                </th>
-                <th colspan="3" style="text-align: center">Jenjang Pendidikan
-                  <table>
-                    <th style="width: 100px; border: none">S1</th>
-                    <th style="width: 140px; border: none">S2</th>
-                    <th style="width: 100px; border: none">S3</th>
-                  </table>
-                </th>
-                <th colspan="3" style="text-align: center">Bidang Keahlian
-                  <table>
-                    <th style="width: 100px; border: none">S1</th>
-                    <th style="width: 140px; border: none">S2</th>
-                    <th style="width: 100px; border: none">S3</th>
-                  </table>
-                </th>
-                <th style="text-align: center">Surat Bukti</th>
-                <th style="text-align: center">Keterangan</th>
-                <th style="text-align: center">Aksi</th> -->
               </tr>
             </thead>
             <tbody>
@@ -196,7 +167,7 @@
 
   </div>
   <!-- <script type="text/javascript" src="<?php echo base_url('assets/js/karyawan.js'); ?>"> -->
-  <script>
+  <!-- <script>
     $(document).ready(function () {
       var table = $('#dataTable').DataTable();
       //Take the category filter drop down and append it to the datatables_filter div. 
@@ -230,5 +201,5 @@
       });
       table.draw();
     });
-  </script>
+  </script> -->
   <!-- End of Main Content -->

@@ -17,7 +17,8 @@
               <?php } ?>
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <a href="<?php echo site_url('C_gaji/tambahGaji') ?>" class="btn btn-secondary btn-icon-split" style="margin-bottom:10px">
+                  <a href="<?php echo site_url('C_gaji/tambahGaji
+                  ') ?>" class="btn btn-secondary btn-icon-split" style="margin-bottom:10px">
                     <span class="icon text-white-50">
                       <i class="fas fa-plus"></i>
                     </span>
@@ -33,6 +34,7 @@
                       <th style="text-align: center">Tunjangan Proyek</th>
                       <th style="text-align: center">Total Gaji</th>
                       <th style="text-align: center">No. Rekening</th>
+                      <th style="text-align: center">Bulan Gajian</th>
                       <th style="text-align: center">Aksi</th>
                     </tr>
                   </thead>
@@ -49,12 +51,9 @@
                         <td>Rp. <?= number_format($u['tunjangan_proyek'],0,',','.') ?></td>
                         <td>Rp. <?= number_format(($u['tunjangan_jabatan']+$u['gaji_pokok']+$u['tunjangan_proyek']),0,',','.') ?></td>
                         <td><?= $u['no_rekening'] ?></td>
+                        <td><?= format_bulan_indo($u['tanggal']) ?></td>
+                        <!-- <td><?= mktime(1,2,3,4,5,6) ?></td> -->
                         <td>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#surat<?= $u['id'] ?>">
-                            Tampilkan
-                          </button>
-                        </td>
-=                       <td>
                           <a href="<?= site_url('C_DosenTdkTetap/editDosenTdkTetap/' . $u['id']) ?>" class="btn btn-primary btn-circle btn-sm" title="Ubah Data">
                             <i class="fas fa-edit"></i>
                           </a>

@@ -15,7 +15,7 @@
                   <select class="form-control" style="width:100%" id="nama_karyawan" name="nama_karyawan">
                     <option value="Pilih" selected disabled>Pilih</option>
                     <?php foreach($namaKaryawan as $u) { ?>
-                    <option value="<?=$u["id"]?>" <?= set_select('nama_karyawan', $u["id"]) ?>><?=$u["nama_karyawan"]?></option>
+                    <option value="<?=$u["id"]?>" <?= set_select('nama_karyawan', $u["id"]) ?> <?php if($u["tanggal"] != FALSE) echo "disabled" ?>><?=$u["nama_karyawan"]?></option>
                     <?php } ?>
                   </select></span></p>
                   <?= form_error('nama_karyawan', '<small class="text-danger pl-3">', '</small>'); ?>

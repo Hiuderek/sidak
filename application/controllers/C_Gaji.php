@@ -13,6 +13,10 @@ class C_Gaji extends CI_Controller
   {
     $this->load->view('default/headerKoor');
     $data['namaKaryawan'] = $this->m_gajiKaryawan->getNamaKaryawan();
+
+    // echo '<pre>';
+    // print_r($data['namaKaryawan'][0]);
+    // die;
     $this->load->view('karyawan/tambahGajiKaryawan', $data);
     $this->load->view('default/footer');
   }
